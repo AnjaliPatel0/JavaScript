@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // Reduces multiple array values reduces in one value 
+    //c is indexing
+    let arr =[1,2,3,4,5];
+    let sum = arr.reduce((a,b,c,d)=>{
+        return a+b;
+    })
+    console.log(sum);
+
+    // find even number and find sum
+    let arr1 =[1,2,3,4,5,64,3,5,2,5,2,34];
+    let res= arr1.filter((a,b)=>{
+        return a%2==0
+    })
+    console.log(res);
+    let sum1 = res.reduce((a,b,c,d)=>{
+        return a+b;
+    })
+    console.log(sum1);
+    
+    // sort array
+    // if subtraction is negative array is already sorted
+    // if subtraction is positive array is on left side
+    //if 0, no need to do anything 
+    //asending order
+    let sorted= arr1.sort((a,b)=>{
+        return a-b
+    })
+    console.log(sorted);
+    
+     let sorted1= arr1.sort((a,b)=>{
+        return b-a
+    })
+    console.log(sorted1);
+    
+
+
+    //if function inside the object is used called method
+     let obj = {
+        id:1,
+        name:"anjali",
+        sum2:function(){
+            console.log("hiii");
+            
+        }
+     }
+     obj.sum2()
+     console.log(obj.id);
+     
+    // function sum(a){
+    //     console.log(a);   
+    // }
+  </script>  
+</body>
+</html>

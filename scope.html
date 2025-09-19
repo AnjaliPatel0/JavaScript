@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Scope 
+        // let and const cannot access outside the block 
+        //var can access outside the block
+
+
+        // let a=10
+        // {
+        //     let a= 30
+        // }
+        // console.log(a);
+        
+        // //override 
+        //  var b=10
+
+        // {
+        //     var b= 30
+        // }
+        // console.log(b);
+
+        // // function block cannot access without function call
+        // function sum(){
+        //     var c=5
+        // }
+        // console.log(c);
+        
+
+        let arr=[1,2,3,4,5,6,7,45]
+        arr.push(11)
+        console.log(arr);
+        arr.unshift(101)// add data from start arr
+        console.log(arr);
+        arr.shift()// delete first elements 
+        console.log(arr);
+        arr.pop()
+        console.log(arr);
+        
+        
+        //Higher order function
+        // any function can retrun fucntion is called HOF
+        // when function return value the execution is end
+        function outer(){
+            let user ="anjali"
+            function  inner(){
+                console.log(user);
+                
+            }
+            return inner
+        }
+        let a=outer()
+        a()
+
+
+        //when function call and argument function pass 
+        // function outer(b){
+        //  b()
+        // }
+        // function inner(){
+        //  console.log("hii");
+         
+        // }
+        // outer(inner)
+
+
+        console.log(typeof(5));
+        console.log(typeof(true));
+        console.log(typeof(typeof(true)));
+        console.log(typeof("hi"));
+
+
+        let arr1=[2,3,4,"hello","hii",true]
+        // function getString(arr1){
+        //     let res=[]
+        //     for(i of arr1){
+        //         if(typeof i=="string"){
+        //            res.push(i)
+        //         }
+        //     }
+        //     return res
+        // }
+        // console.log(getString(arr1));
+        
+         function getString(i){
+            return typeof i =="string"
+         }
+          function getNumber(i){
+            return typeof i =="number"
+         }
+           function getBoolean(i){
+            return typeof i =="boolean"
+         }
+         function getfun(arr1,fn){
+            let res=[]
+            for(i of arr1){
+                if(fn(i)){
+                   res.push(i)
+                }
+            }
+            return res
+        }
+        console.log(getfun(arr1,getString));
+        console.log(getfun(arr1,getNumber));
+        console.log(getfun(arr1,getBoolean));
+        
+    </script>
+</body>
+</html>

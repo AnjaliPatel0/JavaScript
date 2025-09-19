@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // Hold multiple property of global
+    // console.log(window);//global object
+
+    // //  this always prefer window ,use window property
+    // console.log(this==window);
+
+    // this keyword is predefind function this keyword is inside the object is method function
+//    this keyword prefer to the object
+    // let obj={
+    //     id:1,
+    //     name:"Anjali",
+    //     sum:function(){
+    //         console.log(this.id); 
+            
+    //     }
+    // }
+    // obj.sum()
+    
+    // a=5
+    // console.log(this.a);//a is attach with the window that why without declaration can access
+    
+    // Arrow function prefer global object not parent function
+    // let obj1={
+    //     id:1,
+    //     name:"Anjali",
+    //     sum:()=>{
+    //         console.log(this); 
+            
+    //     }
+    // }
+    // obj.sum()
+
+    //    a:5
+    //  let obj2={
+    //     a:10,
+    //     sum:()=>{
+    //         console.log(this.a); 
+    //     },
+    //     id:1,
+    //     name:"Anjali",
+    //     sum1:()=>{
+    //         console.log(this); 
+            
+    //     }
+    // }
+
+    // obj2.sum()
+
+
+
+
+    // Prototype tells hidden property that cannot see
+    // Searching in three layer first search in arr if not find search in prototype if not find then object search then null
+    // let arr =[1,2,34,56]
+    // console.log(arr.toString());
+    // console.log(Array.prototype);
+    
+
+    
+    // polyfill customised function 
+    // filter function
+    let arr =[1,2,3,4,5,6]
+    Array.prototype.myFilter=function(cb){
+        let res=[]
+        for(let i=0;i<this.length;i++){
+            if(cb(this[i],i,this)){
+                res.push(this[i])
+            }
+        }
+        return res
+    }
+    let data=arr.myFilter((a,b,c)=>{
+        return a%2==0
+    })
+    console.log(data);
+    
+    
+    
+</script>    
+</body>
+</html>
